@@ -1,15 +1,27 @@
 {
+  "name": "client",
+  "version": "0.1.0",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "build": "bash scripts/build.sh",
-    "show-versions": "bash scripts/versions.sh",
-    "release-html": "bash scripts/release-html.sh",
-    "release-react": "bash scripts/release-react.sh",
-    "prepublishOnly": "yarn build"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "run:ios-demo": "npx artillery run apollo-internal-demos/ios-workload.yml",
+    "codegen": "apollo client:codegen --target typescript --watch"
   },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@hapi/hapi": "19.1.1",
     "@types/node": "12.12.34",
